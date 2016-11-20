@@ -6,7 +6,10 @@ language: generic
 os: osx
 osx_image: beta-xcode6.1
 
-
+env:
+  global:
+    # The BINSTAR_TOKEN secure variable. This is defined canonically in conda-forge.yml.
+    - secure: "SkJRGc5uLhEGDBrvtQLyKFNxV4f5aBoDnoyNIZqfKiR/i+qkxrNgcYC1fx77ggSSSMbm3IjUUZDhomwxl9/de3+MTsB+cyG9wDweDv81cS7j3FLnRjjfCL2rCBi8UocmQcPe5tifNbYoZ6/elCQZVv3Qdsrqmc+h/OgmpAwzCNFocYto8exxUXBhvn5FPmqQ4XinkrqGSSASOWLBiOnzepFgANCkFRN1kTknE+wgz0w3yVuZefr9r8jbnpwITSni0Ww7AwnpA6bdczShah4vvoavCOr+wh+j+RgxXSYlVHyNUeKJxCZXaI/FKZTkkpKK0wkxyVUvghvOxVD8lt9cM7nyi27uh9v8GNvZFRLq+x0H/fbEWh/ZZF9qQApQLsiit9UIvsVnn/lW4EsClrMdMtEKEGvE/7Rwu/9eBE7FbK75mG4vURC/vujGrQeIa9ZgXhLwUVl46R6XhcGRaHYHoflFmSfc+Byp0Vh2J1rSgEyoe7kglim6cwaoPSnwSkLAfU+oIBtuIi0gtBee7x/mh1qnXQelktGGlsiDl23e6mdd0EegJFoqVRrgzP6KRNeazbCPAzQBffgXNPCKXN65hfcBM6HGK0r1GUAj3nri0PEh09I96yyS73oxP3lRD3RkzcuZ9QkdDT7repQPJPenso35J5+BbPvSJMf2uQLiWuQ="
 
 
 before_install:

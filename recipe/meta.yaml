@@ -20,6 +20,7 @@ build:
 
 requirements:
   build:
+    # Add python for feature activation
     - python {{ environ['PY_VER'] + '*' }}  # [win]
     - cmake  # [win]
     - autoconf  # [unix]

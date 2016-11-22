@@ -20,9 +20,17 @@ build:
 
 requirements:
   build:
-    - python {{ environ['PY_VER'] + '*' }}  # [win]
+    # Add python for feature activation
+    - python  # [win]
+    - vc 9  # [win and py27]
+    - vc 10  # [win and py34]
+    - vc 14  # [win and py35]
     - cmake  # [win]
     - autoconf  # [unix]
+  run:
+    - vc 9  # [win and py27]
+    - vc 10  # [win and py34]
+    - vc 14  # [win and py35]
 
 test:
   requires:

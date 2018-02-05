@@ -14,6 +14,18 @@ provide low level access to audio, keyboard, mouse, joystick, and graphics
 hardware via OpenGL and Direct3D.
 
 
+Current build status
+====================
+
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/sdl2-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/sdl2-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/sdl2-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/sdl2-feedstock)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/sdl2-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/sdl2-feedstock/branch/master)
+
+Current release info
+====================
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/sdl2/badges/version.svg)](https://anaconda.org/conda-forge/sdl2)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/sdl2/badges/downloads.svg)](https://anaconda.org/conda-forge/sdl2)
+
 Installing sdl2
 ===============
 
@@ -57,6 +69,7 @@ To manage the continuous integration and simplify feedstock maintenance
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
+For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
@@ -69,18 +82,6 @@ Terminology
 
 **conda-forge** - the place where the feedstock and smithy live and work to
                   produce the finished article (built conda distributions)
-
-Current build status
-====================
-
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/sdl2-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/sdl2-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/sdl2-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/sdl2-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/sdl2-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/sdl2-feedstock/branch/master)
-
-Current release info
-====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/sdl2/badges/version.svg)](https://anaconda.org/conda-forge/sdl2)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/sdl2/badges/downloads.svg)](https://anaconda.org/conda-forge/sdl2)
 
 
 Updating sdl2-feedstock

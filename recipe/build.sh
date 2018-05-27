@@ -7,5 +7,10 @@ sed -i -- "s|@prefix@|${PREFIX}|g" sdl2-config.in
 
 # Build SDL2
 ./autogen.sh
-./configure --prefix=${PREFIX} --disable-haptic --without-x
+if [ -z ${OSX_ARCH+x} ]; then
+  ./configure --prefix=${PREFIX} --disable-haptic;
+else
+  ./configure --prefix=${PREFIX} --disable-haptic --without-x;
+fi
+
 make install

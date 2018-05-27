@@ -1,6 +1,6 @@
 {% set name = "SDL2" %}
-{% set version = "2.0.7" %}
-{% set sha256 = "ee35c74c4313e2eda104b14b1b86f7db84a04eeab9430d56e001cea268bf4d5e" %}
+{% set version = "2.0.8" %}
+{% set sha256 = "edc77c57308661d576e843344d8638e025a7818bff73f8fbfab09c3c5fd092ec" %}
 
 package:
   name: {{ name|lower }}

@@ -1,43 +1,28 @@
-{% set name = "SDL2" %}
 {% set version = "2.0.8" %}
-{% set sha256 = "edc77c57308661d576e843344d8638e025a7818bff73f8fbfab09c3c5fd092ec" %}
 
 package:
-  name: {{ name|lower }}
+  name: sdl2
   version: {{ version }}
 
 source:
-  fn:  {{ name }}-{{ version }}.tar.gz
-  url:  https://www.libsdl.org/release/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url:  https://www.libsdl.org/release/SDL2-{{ version }}.tar.gz
+  sha256: edc77c57308661d576e843344d8638e025a7818bff73f8fbfab09c3c5fd092ec
 
 build:
   number: 1001
-  features:
-    - vc9  # [win and py27]
-    - vc10  # [win and py34]
-    - vc14  # [win and py35]
 
 requirements:
   build:
-    # Add python for feature activation
-    - python  # [win]
-    - vc 9  # [win and py27]
-    - vc 10  # [win and py34]
-    - vc 14  # [win and py35]
     - cmake  # [win]
-    - autoconf  # [unix]
+    - autoconf  # [not win]
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
     - xorg-libx11  # [linux]
-  run:
-    - vc 9  # [win and py27]
-    - vc 10  # [win and py34]
-    - vc 14  # [win and py35]
 
 test:
-  requires:
-    - python {{ environ['PY_VER'] + '*' }}  # [win]
   commands:
-    - sdl2-config --version  # [unix]
+    - sdl2-config --version  # [not win]
 
 about:
   home: https://www.libsdl.org/index.php
@@ -45,8 +30,8 @@ about:
   license_file: COPYING.txt
   summary: "Low-level access to audio, keyboard, mouse, joystick, and graphics"
   description: |
-    Simple DirectMedia Layer is a cross-platform development library designed to 
-    provide low level access to audio, keyboard, mouse, joystick, and graphics 
+    Simple DirectMedia Layer is a cross-platform development library designed to
+    provide low level access to audio, keyboard, mouse, joystick, and graphics
     hardware via OpenGL and Direct3D.
   doc_url: https://wiki.libsdl.org/FrontPage
   dev_url: http://hg.libsdl.org/SDL

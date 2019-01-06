@@ -1,0 +1,12 @@
+--- CMakeLists.txt	2018-03-01 11:34:41.000000000 -0500
++++ CMakeLists_new.txt	2019-01-05 19:18:09.303499500 -0500
+@@ -1721,6 +1721,9 @@
+     set_target_properties(SDL2 PROPERTIES LINK_FLAGS_RELEASE "/NODEFAULTLIB")
+     set_target_properties(SDL2 PROPERTIES LINK_FLAGS_DEBUG "/NODEFAULTLIB")
+     set_target_properties(SDL2 PROPERTIES STATIC_LIBRARY_FLAGS "/NODEFAULTLIB")
++    if(MSVC_VERSION GREATER 1400)
++        list(APPEND EXTRA_LIBS vcruntime) # C++ runtime
++    endif()
+   endif()
+   set(_INSTALL_LIBS "SDL2" ${_INSTALL_LIBS})
+   target_link_libraries(SDL2 ${EXTRA_LIBS} ${EXTRA_LDFLAGS})

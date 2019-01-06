@@ -4,7 +4,7 @@
      set_target_properties(SDL2 PROPERTIES LINK_FLAGS_RELEASE "/NODEFAULTLIB")
      set_target_properties(SDL2 PROPERTIES LINK_FLAGS_DEBUG "/NODEFAULTLIB")
      set_target_properties(SDL2 PROPERTIES STATIC_LIBRARY_FLAGS "/NODEFAULTLIB")
-+    if(MSVC_VERSION GREATER 1400)
++    if(MSVC_VERSION GREATER_EQUAL 1900)
 +        list(APPEND EXTRA_LIBS vcruntime) # C++ runtime
 +    endif()
    endif()

@@ -12,7 +12,7 @@ if %VS_MAJOR% LSS 14 (
 :: DirectX being integrated in the windows SDK and not being installed separately
 :: confuses good old Visual Studio 2008, so disable DirectX detection durion compilation.
 if "%VS_MAJOR%"=="9" (
-	set DIRECTX_FLAG="-DDIRECTX=OFF"
+	set DIRECTX_FLAG="-DDIRECTX=OFF" "-DSDL_JOYSTICK_DUMMY=1"
 )
 if errorlevel 1 exit 1
 

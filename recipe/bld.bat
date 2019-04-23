@@ -13,7 +13,8 @@ if %VS_MAJOR% LSS 14 (
 :: confuses good old Visual Studio 2008, so disable DirectX detection durion compilation.
 if "%VS_MAJOR%"=="9" (
 	set DIRECTX_FLAG="-DDIRECTX=OFF"
-	set JOYSTICK_FLAG="-DSDL_JOYSTICK=OFF -DSDL_HAPTIC=OFF"
+	set JOYSTICK_FLAG="-DSDL_HAPTIC=OFF -DSDL_JOYSTICK=OFF"
+	echo "setting joystick to !DIRECTX_FLAG! !JOYSTICK_FLAG!"
 )
 if errorlevel 1 exit 1
 

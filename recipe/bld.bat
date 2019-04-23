@@ -13,8 +13,6 @@ if %VS_MAJOR% LSS 14 (
 :: confuses good old Visual Studio 2008, so disable DirectX detection durion compilation.
 if "%VS_MAJOR%"=="9" (
 	set DIRECTX_FLAG="-DDIRECTX=OFF"
-	set JOYSTICK_FLAG="-DSDL_HAPTIC=OFF" "-DSDL_JOYSTICK=OFF"
-	echo "setting joystick to !DIRECTX_FLAG! !JOYSTICK_FLAG!"
 )
 if errorlevel 1 exit 1
 
@@ -23,7 +21,7 @@ mkdir build
 cd build
 
 :: Configure using the CMakeFiles
-cmake -G "NMake Makefiles" -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" -DCMAKE_BUILD_TYPE:STRING=!TARGET! !DIRECTX_FLAG! !JOYSTICK_FLAG! ..
+cmake -G "NMake Makefiles" -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" -DCMAKE_BUILD_TYPE:STRING=!TARGET! !DIRECTX_FLAG! ..
 if errorlevel 1 exit 1
 
 :: Build!

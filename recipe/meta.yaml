@@ -9,7 +9,7 @@ source:
   sha256: 255186dc676ecd0c1dbf10ec8a2cc5d6869b5079d8a38194c2aecdff54b324b1
   patches:
     - msvc2015.patch  # [win]
-    - msvc9_empty_array.patch  # [win and vc<14]
+    - msvc9_empty_array.patch  # [win and c_compiler == 'vs2008']
 
 build:
   number: 0

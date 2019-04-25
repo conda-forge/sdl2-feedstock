@@ -10,7 +10,7 @@ sed -i -- "s|@prefix@|${PREFIX}|g" sdl2-config.in
 if [ -z ${OSX_ARCH+x} ]; then
   ./configure --prefix=${PREFIX} --disable-haptic;
 else
-  ./configure --prefix=${PREFIX} --disable-haptic --without-x;
+  ./configure --prefix=${PREFIX} --disable-haptic --without-x LDFLAGS="-framework ForceFeedback";
 fi
 
 make install

@@ -20,9 +20,15 @@ requirements:
     - autoconf  # [not win]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - {{ cdt('mesa-libgl-devel') }}  # [linux]
+    - {{ cdt('mesa-dri-drivers') }}  # [linux]
+    - {{ cdt('libselinux') }}  # [linux]
+    - {{ cdt('libxdamage') }}  # [linux]
+    - {{ cdt('libxxf86vm') }}  # [linux]
   host:
     - xorg-libx11  # [linux]
     - xorg-libxext  # [linux]
+    - xorg-libxfixes  # [linux]
   run:
     - xorg-libx11  # [linux]
     - xorg-libxext  # [linux]

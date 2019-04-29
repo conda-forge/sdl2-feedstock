@@ -12,7 +12,7 @@ source:
     - msvc9_empty_array.patch  # [win and c_compiler == 'vs2008']
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -20,9 +20,15 @@ requirements:
     - autoconf  # [not win]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - {{ cdt('mesa-libgl-devel') }}  # [linux]
+    - {{ cdt('mesa-dri-drivers') }}  # [linux]
+    - {{ cdt('libselinux') }}  # [linux]
+    - {{ cdt('libxdamage') }}  # [linux]
+    - {{ cdt('libxxf86vm') }}  # [linux]
   host:
     - xorg-libx11  # [linux]
     - xorg-libxext  # [linux]
+    - xorg-libxfixes  # [linux]
   run:
     - xorg-libx11  # [linux]
     - xorg-libxext  # [linux]

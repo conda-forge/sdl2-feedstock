@@ -15,7 +15,5 @@ fi
 ls
 echo "showing log"
 cat config.log
-echo "Searching for xlib.h"
-find / -name "Xlib.h"
 
 make install

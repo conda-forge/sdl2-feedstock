@@ -12,5 +12,7 @@ if [ -z ${OSX_ARCH+x} ]; then
 else
   ./configure --prefix=${PREFIX} --disable-haptic --without-x LDFLAGS="-framework ForceFeedback";
 fi
+ls
+cat config.log
 
 make install

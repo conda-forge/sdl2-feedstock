@@ -27,6 +27,7 @@ requirements:
     - {{ cdt('libxxf86vm') }}  # [linux]
     - xorg-libx11  # [linux]
     - xorg-libxext  # [linux]
+    - {{ cdt('libx11-devel') }}          # [linux]
   host:
     - xorg-libx11  # [linux]
     - xorg-libxext  # [linux]

@@ -28,6 +28,8 @@ requirements:
     - xorg-libx11  # [linux]
     - xorg-libxext  # [linux]
     - {{ cdt('libx11-devel') }}          # [linux]
+    - {{ cdt('libxext-devel') }}         # [linux]
+    - {{ cdt('libxrender-devel') }}      # [linux]
   host:
     - xorg-libx11  # [linux]
     - xorg-libxext  # [linux]

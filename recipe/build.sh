@@ -8,11 +8,14 @@ sed -i -- "s|@prefix@|${PREFIX}|g" sdl2-config.in
 # Build SDL2
 ./autogen.sh
 if [ -z ${OSX_ARCH+x} ]; then
-  ./configure --prefix=${PREFIX} --disable-haptic;
+  ./configure --prefix=${PREFIX} --disable-haptic --verbose;
 else
   ./configure --prefix=${PREFIX} --disable-haptic --without-x LDFLAGS="-framework ForceFeedback";
 fi
 ls
+echo "showing log"
 cat config.log
+echo "Searching for xlib.h"
+find / -name "Xlib.h"
 
 make install

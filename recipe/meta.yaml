@@ -12,7 +12,7 @@ source:
     - msvc9_empty_array.patch  # [win and c_compiler == 'vs2008']
 
 build:
-  number: 1
+  number: 2
 
 requirements:
   build:
@@ -25,6 +25,12 @@ requirements:
     - {{ cdt('libselinux') }}  # [linux]
     - {{ cdt('libxdamage') }}  # [linux]
     - {{ cdt('libxxf86vm') }}  # [linux]
+    - xorg-libx11  # [linux]
+    - xorg-libxext  # [linux]
+    - {{ cdt('libx11-devel') }}          # [linux]
+    - {{ cdt('libxext-devel') }}         # [linux]
+    - {{ cdt('libxrender-devel') }}      # [linux]
+    - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
   host:
     - xorg-libx11  # [linux]
     - xorg-libxext  # [linux]
@@ -52,3 +58,4 @@ about:
 extra:
   recipe-maintainers:
     - dschreij
+    - matham

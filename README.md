@@ -168,4 +168,5 @@ Feedstock Maintainers
 =====================
 
 * [@dschreij](https://github.com/dschreij/)
+* [@matham](https://github.com/matham/)
 

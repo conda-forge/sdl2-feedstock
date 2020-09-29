@@ -17,6 +17,7 @@ build:
 requirements:
   build:
     - cmake  # [win]
+    - make  # [unix]
     - autoconf  # [not win]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}

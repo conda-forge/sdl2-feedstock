@@ -5,9 +5,13 @@ Home: https://www.libsdl.org/index.php
 
 Package license: Public Domain/ZLIB
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/sdl2-feedstock/blob/master/LICENSE.txt)
 
 Summary: Low-level access to audio, keyboard, mouse, joystick, and graphics
+
+Development: http://hg.libsdl.org/SDL
+
+Documentation: https://wiki.libsdl.org/FrontPage
 
 Simple DirectMedia Layer is a cross-platform development library designed to
 provide low level access to audio, keyboard, mouse, joystick, and graphics

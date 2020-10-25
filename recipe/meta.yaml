@@ -1,4 +1,4 @@
-{% set version = "2.0.10" %}
+{% set version = "2.0.12" %}
 
 package:
   name: sdl2
@@ -6,10 +6,11 @@ package:
 
 source:
   url:  https://www.libsdl.org/release/SDL2-{{ version }}.tar.gz
-  sha256: b4656c13a1f0d0023ae2f4a9cf08ec92fffb464e0f24238337784159b8b91d57
+  sha256: 349268f695c02efbc9b9148a70b85e58cefbbf704abd3e91be654db7f1e2c863
   patches:
     - msvc2015.patch  # [win]
     - msvc9_empty_array.patch  # [win and c_compiler == 'vs2008']
+    - isOperatingSystemAtLeastVersion-not-found.patch
 
 build:
   number: 0
@@ -46,7 +47,7 @@ test:
 
 about:
   home: https://www.libsdl.org/index.php
-  license: Public Domain/ZLIB
+  license: Zlib
   license_file: COPYING.txt
   summary: "Low-level access to audio, keyboard, mouse, joystick, and graphics"
   description: |

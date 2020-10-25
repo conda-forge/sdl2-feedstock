@@ -1,5 +1,28 @@
---- a/src/video/cocoa/SDL_cocoawindow.m	Fri Oct 09 04:00:00 2020 +0300
-+++ b/src/video/cocoa/SDL_cocoawindow.m	Fri Oct 09 04:00:00 2020 +0300
+From c75dd299afe5e99115a9318ad8efafeaae6290db Mon Sep 17 00:00:00 2001
+From: Ozkan Sezer <sezeroz@gmail.com>
+Date: Fri, 9 Oct 2020 04:00:00 +0300
+Subject: [PATCH] Fix https://bugzilla.libsdl.org/show_bug.cgi?id=5306
+
+(Also see: https://bugzilla.libsdl.org/show_bug.cgi?id=4822)
+
+Building the current tree against 10.8 SDK, clang emits the following warning:
+src/video/cocoa/SDL_cocoawindow.m:1846:27: warning: instance method '-isOperatingSystemAtLeastVersion:' not found (return type defaults to 'id') [-Wobjc-method-access]
+            ![processInfo isOperatingSystemAtLeastVersion:version]) {
+                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/MacOSX10.8.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSProcessInfo.h:20:12: note: receiver is instance of class declared here
+@interface NSProcessInfo : NSObject {
+           ^
+1 warning generated.
+
+isOperatingSystemAtLeastVersion is an 10.10 thing.
+---
+ src/video/cocoa/SDL_cocoawindow.m | 15 ++++-----------
+ 1 file changed, 4 insertions(+), 11 deletions(-)
+
+diff --git a/src/video/cocoa/SDL_cocoawindow.m b/src/video/cocoa/SDL_cocoawindow.m
+index 86e151a65..79557ef28 100644
+--- a/src/video/cocoa/SDL_cocoawindow.m
++++ b/src/video/cocoa/SDL_cocoawindow.m
 @@ -57,6 +57,9 @@
  #ifndef MAC_OS_X_VERSION_10_12
  #define NSEventModifierFlagCapsLock NSAlphaShiftKeyMask
@@ -10,7 +33,7 @@
  
  @interface SDLWindow : NSWindow <NSDraggingDestination>
  /* These are needed for borderless/fullscreen windows */
-@@ -1833,17 +1836,7 @@
+@@ -1833,17 +1836,7 @@ Cocoa_SetWindowFullscreen(_THIS, SDL_Window * window, SDL_VideoDisplay * display
          /* Hack to fix origin on Mac OS X 10.4
             This is no longer needed as of Mac OS X 10.15, according to bug 4822.
           */
@@ -29,3 +52,6 @@
              NSRect screenRect = [[nswindow screen] frame];
              if (screenRect.size.height >= 1.0f) {
                  rect.origin.y += (screenRect.size.height - rect.size.height);
+-- 
+2.27.0
+

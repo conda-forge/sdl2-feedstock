@@ -47,7 +47,7 @@ test:
 
 about:
   home: https://www.libsdl.org/index.php
-  license: Public Domain/ZLIB
+  license: Zlib
   license_file: COPYING.txt
   summary: "Low-level access to audio, keyboard, mouse, joystick, and graphics"
   description: |

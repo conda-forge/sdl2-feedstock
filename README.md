@@ -3,7 +3,7 @@ About sdl2
 
 Home: https://www.libsdl.org/index.php
 
-Package license: Public Domain/ZLIB
+Package license: Zlib
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/sdl2-feedstock/blob/master/LICENSE.txt)
 

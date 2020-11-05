@@ -11,9 +11,10 @@ source:
     - msvc2015.patch  # [win]
     - msvc9_empty_array.patch  # [win and c_compiler == 'vs2008']
     - isOperatingSystemAtLeastVersion-not-found.patch
+    - fixLibSuffixOSX.patch
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:

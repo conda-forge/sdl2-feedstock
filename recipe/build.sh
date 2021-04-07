@@ -9,7 +9,9 @@ sed -i -- "s|@prefix@|${PREFIX}|g" sdl2.pc.in
 sed -i -- "s|@prefix@|${PREFIX}|g" sdl2-config.in
 
 # Build SDL2
-./autogen.sh
+if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
+  ./autogen.sh
+fi
 if [ -z ${OSX_ARCH+x} ]; then
   ./configure --prefix=${PREFIX} --disable-haptic;
 else

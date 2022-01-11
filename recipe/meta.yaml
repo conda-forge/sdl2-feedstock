@@ -1,20 +1,18 @@
-{% set version = "2.0.12" %}
+{% set version = "2.0.18" %}
 
 package:
   name: sdl2
   version: {{ version }}
 
 source:
-  url:  https://www.libsdl.org/release/SDL2-{{ version }}.tar.gz
-  sha256: 349268f695c02efbc9b9148a70b85e58cefbbf704abd3e91be654db7f1e2c863
+  url: https://www.libsdl.org/release/SDL2-{{ version }}.tar.gz
+  sha256: 94d40cd73dbfa10bb6eadfbc28f355992bb2d6ef6761ad9d4074eff95ee5711c
   patches:
     - msvc2015.patch  # [win]
     - msvc9_empty_array.patch  # [win and c_compiler == 'vs2008']
-    - isOperatingSystemAtLeastVersion-not-found.patch
-    - fixLibSuffixOSX.patch
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
@@ -50,8 +48,8 @@ test:
 about:
   home: https://www.libsdl.org/index.php
   license: Zlib
-  license_file: COPYING.txt
-  summary: "Low-level access to audio, keyboard, mouse, joystick, and graphics"
+  license_file: LICENSE.txt
+  summary: Low-level access to audio, keyboard, mouse, joystick, and graphics
   description: |
     Simple DirectMedia Layer is a cross-platform development library designed to
     provide low level access to audio, keyboard, mouse, joystick, and graphics

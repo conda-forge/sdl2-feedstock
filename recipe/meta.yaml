@@ -1,7 +1,8 @@
+{% set name = "sdl2" %}
 {% set version = "2.0.18" %}
 
 package:
-  name: sdl2
+  name: {{ name }}
   version: {{ version }}
 
 source:

@@ -13,7 +13,7 @@ source:
     - msvc9_empty_array.patch  # [win and c_compiler == 'vs2008']
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
 

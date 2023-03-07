@@ -1,11 +1,11 @@
-About sdl2
-==========
+About sdl2-feedstock
+====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/sdl2-feedstock/blob/main/LICENSE.txt)
 
 Home: https://www.libsdl.org/index.php
 
 Package license: Zlib
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/sdl2-feedstock/blob/main/LICENSE.txt)
 
 Summary: Low-level access to audio, keyboard, mouse, joystick, and graphics
 

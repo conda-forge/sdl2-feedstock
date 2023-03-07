@@ -1,5 +1,5 @@
 {% set name = "sdl2" %}
-{% set version = "2.26.3" %}
+{% set version = "2.26.4" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/libsdl-org/SDL/releases/download/release-{{ version }}/SDL2-{{ version }}.tar.gz
-  sha256: c661205a553b7d252425f4b751ff13209e5e020b876bbfa1598494af61790057
+  sha256: 1a0f686498fb768ad9f3f80b39037a7d006eac093aad39cb4ebcc832a8887231
   patches:
     - msvc2015.patch  # [win]
     - msvc9_empty_array.patch  # [win and c_compiler == 'vs2008']

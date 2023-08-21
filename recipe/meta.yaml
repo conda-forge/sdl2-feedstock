@@ -8,9 +8,6 @@ package:
 source:
   url: https://github.com/libsdl-org/SDL/releases/download/release-{{ version }}/SDL2-{{ version }}.tar.gz
   sha256: 64b1102fa22093515b02ef33dd8739dee1ba57e9dbba6a092942b8bbed1a1c5e
-  patches:
-    - msvc2015.patch  # [win]
-    - msvc9_empty_array.patch  # [win and c_compiler == 'vs2008']
 
 build:
   number: 0

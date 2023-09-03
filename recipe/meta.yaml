@@ -1,8 +1,7 @@
-{% set name = "sdl2" %}
 {% set version = "2.28.3" %}
 
 package:
-  name: {{ name }}
+  name: sdl2
   version: {{ version }}
 
 source:
@@ -12,7 +11,7 @@ source:
 build:
   number: 0
   run_exports:
-    - {{ pin_subpackage(name, max_pin='x') }}
+    - {{ pin_subpackage("sdl2", max_pin='x') }}
 
 requirements:
   build:

@@ -1,0 +1,5 @@
+project(cf_dummy LANGUAGES C)
+cmake_minimum_required(VERSION 3.12)
+find_package(SDL2 REQUIRED)
+add_executable(test_me test_me.c)
+target_link_libraries(test_me SDL2)

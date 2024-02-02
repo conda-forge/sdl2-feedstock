@@ -1,4 +1,4 @@
-{% set version = "2.28.5" %}
+{% set version = "2.30.0" %}
 
 package:
   name: sdl2
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/libsdl-org/SDL/releases/download/release-{{ version }}/SDL2-{{ version }}.tar.gz
-  sha256: 332cb37d0be20cb9541739c61f79bae5a477427d79ae85e352089afdaf6666e4
+  sha256: 36e2e41557e0fa4a1519315c0f5958a87ccb27e25c51776beb6f1239526447b0
 
 build:
-  number: 1
+  number: 0
   run_exports:
     - {{ pin_subpackage("sdl2", max_pin='x') }}
 
